@@ -1,14 +1,15 @@
 #w1 assignment3
 
-# def find_max(numbers):
-#     max_num = numbers[0]
-#     for num in numbers:
-#         if num > max_num:
-#             max_num = num
-#     return max_num
+max_num = "No number"
+def find_max(numbers):
+    max_num = numbers[0]
+    for num in numbers:
+        if num > max_num:
+            max_num = num
+    return max_num
 
-# print(find_max([1,2,4,5]))
-# print(find_max([5, 2, 7, 1, 6]))
+print(find_max([1,2,4,5]))
+print(find_max([5, 2, 7, 1, 6]))
 
 #------------------------------------
 
