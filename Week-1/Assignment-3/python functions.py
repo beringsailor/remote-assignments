@@ -1,15 +1,18 @@
 #w1 assignment3
 
-max_num = "No number"
 def find_max(numbers):
-    max_num = numbers[0]
-    for num in numbers:
-        if num > max_num:
-            max_num = num
-    return max_num
+    try: 
+        max_num = numbers[0]
+        for num in numbers:
+            if num > max_num:
+                max_num = num
+        return(max_num)
+    except IndexError:
+        return "No number in array"
 
 print(find_max([1,2,4,5]))
 print(find_max([5, 2, 7, 1, 6]))
+print(find_max([]))
 
 #------------------------------------
 
