@@ -1,6 +1,7 @@
-const h2 = document.querySelector('h2');
-h2.addEventListener('click', () => {
-  h2.textContent = "Have a Good Time!";
+const welcomemsg = document.querySelector('.welcome.middle');
+
+welcomemsg.addEventListener('click', () => {
+  welcomemsg.textContent = "Have a Good Time!";
 });
 
 const callToAction = document.querySelector('div#button');
