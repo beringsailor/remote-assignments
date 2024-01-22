@@ -1,5 +1,4 @@
 const welcomemsg = document.querySelector('.welcome.middle');
-
 welcomemsg.addEventListener('click', () => {
   welcomemsg.textContent = "Have a Good Time!";
 });
