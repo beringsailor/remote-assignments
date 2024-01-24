@@ -1,21 +1,11 @@
 def group_by_key(input):
-    sum_a = 0
-    sum_b = 0
-    sum_c = 0
-    for dics in input:
-        if dics['key'] == 'a':
-            sum_a += dics['value']
-        elif dics['key'] == 'b':
-            sum_b += dics['value']
-        elif dics['key'] == 'c':
-            sum_c += dics['value']
+    count = {}
+    for item in input:
+        if item['key'] in count:
+            count[item['key']] += item['value']
         else:
-            pass
-    return {
-          'a': sum_a, 
-          'b': sum_b, 
-          'c': sum_c, 
-    }
+            count[item['key']] = item['value']
+    return count
 
 input2 = [
 {'key': 'a', 'value': 3},
@@ -26,3 +16,19 @@ input2 = [
 ]
 
 print(group_by_key(input2)) # should print {‘a’: 6, ‘b’: 1, ‘c’: 7}
+
+# old code
+# def group_by_key(input):
+#     sum_a = 0, sum_b = 0, sum_c = 0
+#     for dics in input:
+#         if dics['key'] == 'a':
+#             sum_a += dics['value']
+#         elif dics['key'] == 'b':
+#             sum_b += dics['value']
+#         elif dics['key'] == 'c':
+#             sum_c += dics['value']
+#         else:
+#             pass
+#     return {
+#           'a': sum_a, b': sum_b, 'c': sum_c, 
+#     }
