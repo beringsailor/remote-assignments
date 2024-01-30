@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Summing</title>
+  </head>
+  <body>
+    <h3>Below can sum 1+2+....+N (a positive integer you enter)</h3>
+    <form method="post" action="/sum">
+      <input type="text" name="number" value="" id="text" style="width: 100px;" />
+      <br />
+      <br />
+      <input type="button" value="Calculate!" onclick = "add()" id="button" />
+      <br />
+      <br />
+      <p>Result is:</p>
+      <input type="text" value="" id="summed" style="width: 100px;"></input>
+    </form>
+    <p>&copy; calculated by fang</p>
+  </body>
+</html>
+
+<script>
+  function add(){
+    number = document.getElementById("text").value
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        document.getElementById("summed").value = xhr.responseText;
+      }
+    };
+    xhr.open("GET", "http://localhost:3000/data?number=" + number, true);
+    xhr.send();
+  }
+</script>
+
