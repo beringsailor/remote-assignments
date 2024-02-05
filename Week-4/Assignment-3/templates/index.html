@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+  <body>
+    <div>
+      <h1>{{ msg }}</h1>
+    </div>
+    <form action = "/home?s=in" method = "POST">
+      <h3>Please sign-in here.</h3>
+      <p>
+        Email: 
+        <input type="text" name="email" id="email" required>
+        Password:
+        <input type="password" name="password" id="password" required>
+      </p>
+      <input type="submit" value="Sign-in"/>
+   </form>
+   <form action = "/home?s=up" method = "POST">
+      <h3>If you don't have an account, please sign-up here.</h3>
+       <p>
+      Email: 
+      <input type="text" name="email" id="email" required>
+      Password:
+      <input type="password" name="password" id="password" required>
+      </p>
+      <input type="submit" value="Sign-up"/>
+    </form>
+    <p>&copy; powered by fang</p>
+  </body>
+</html>
