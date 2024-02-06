@@ -1,6 +1,7 @@
 from flask import (Flask, render_template, session,
                    request, redirect, url_for)
-import pymysql 
+import pymysql
+import re
 
 app = Flask(__name__)
 app.secret_key = '*&G*%RF^YGHJ' 
@@ -51,9 +52,11 @@ def signin():
         # If account exists show error and validation checks
         if account:
             msg = 'Account already exists!'
+        elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
+            msg = 'Invalid email address!'
         else:
             # Account doesnt exists and the form data is valid, now insert new account into accounts table
-            cursor.execute('INSERT INTO user VALUES (NULL, %s, %s)', (email, password)) 
+            cursor.execute('INSERT INTO user VALUES (%s, %s)', (email, password)) 
             mysql.commit()
             return redirect(url_for('member'))
             
