@@ -56,7 +56,7 @@ def signin():
             msg = 'Invalid email address!'
         else:
             # Account doesnt exists and the form data is valid, now insert new account into accounts table
-            cursor.execute('INSERT INTO user VALUES (%s, %s)', (email, password)) 
+            cursor.execute('INSERT INTO user (email, password) VALUES (%s, %s)', (email, password))
             mysql.commit()
             return redirect(url_for('member'))
             
